@@ -11,6 +11,10 @@ define(['dart_sdk', 'async_helper', 'expect', 'unittest', 'is', 'require'],
   let mochaOnError = window.onerror;
   dart_sdk.dart.trapRuntimeErrors(false);
   dart_sdk._isolate_helper.startRootIsolate(function() {}, []);
+  // Make it easier to debug test failures and required for formatter test that
+  // assumes custom formatters are enabled.
+  dart_sdk._debugger.registerDevtoolsFormatter();
+
   let html_config = unittest.html_config;
   // Test attributes are a list of strings, or a string for a single
   // attribute. Valid attributes are:
@@ -183,7 +187,7 @@ define(['dart_sdk', 'async_helper', 'expect', 'unittest', 'is', 'require'],
       'generic_instanceof2_test': fail,
       'generic_is_check_test': fail,
       'getter_closure_execution_order_test': fail,
-      'hash_code_mangling_test': fail,
+      'gc_test': 'slow',
       'identical_closure2_test': fail,
       'infinite_switch_label_test': fail,
       'infinity_test': fail,
@@ -384,6 +388,7 @@ define(['dart_sdk', 'async_helper', 'expect', 'unittest', 'is', 'require'],
       'custom_element_name_clash_test': async_unittest,
       'custom_elements_23127_test': async_unittest,
       'custom_elements_test': async_unittest,
+      'debugger_test': fail,
       'element_animate_test': 'unittest',
 
       // https://github.com/dart-lang/sdk/issues/27579.
