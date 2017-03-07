@@ -71361,6 +71361,7 @@ dart.setSignature(html._GeopositionWrapper, {
     timestamp: dart.definiteFunctionType(core.int, [])
   })
 });
+dart.defineExtensionMembers(html._GeopositionWrapper, ['coords', 'timestamp']);
 dart.defineExtensionNames([
   'coords',
   'timestamp'
@@ -88841,6 +88842,21 @@ dart.setSignature(html._WrappedEvent, {
     stopPropagation: dart.definiteFunctionType(dart.void, [])
   })
 });
+dart.defineExtensionMembers(html._WrappedEvent, [
+  'preventDefault',
+  'stopImmediatePropagation',
+  'stopPropagation',
+  'bubbles',
+  'cancelable',
+  'currentTarget',
+  'defaultPrevented',
+  'eventPhase',
+  'target',
+  'timeStamp',
+  'type',
+  'matchingTarget',
+  'path'
+]);
 html._BeforeUnloadEvent = class _BeforeUnloadEvent extends html._WrappedEvent {
   new(base) {
     this[_returnValue] = null;
@@ -88862,6 +88878,7 @@ dart.setSignature(html._BeforeUnloadEvent, {
   getters: () => ({returnValue: dart.definiteFunctionType(core.String, [])}),
   setters: () => ({returnValue: dart.definiteFunctionType(dart.void, [core.String])})
 });
+dart.defineExtensionMembers(html._BeforeUnloadEvent, ['returnValue', 'returnValue']);
 const _eventType = Symbol('_eventType');
 html._BeforeUnloadEventStreamProvider = class _BeforeUnloadEventStreamProvider extends core.Object {
   new(eventType) {
@@ -92164,6 +92181,25 @@ dart.setSignature(html.KeyEvent, {
   }),
   names: ['_makeRecord', '_convertToHexString']
 });
+dart.defineExtensionMembers(html.KeyEvent, [
+  'getModifierState',
+  'keyCode',
+  'charCode',
+  'altKey',
+  'which',
+  'currentTarget',
+  'code',
+  'ctrlKey',
+  'detail',
+  'key',
+  'keyLocation',
+  'metaKey',
+  'shiftKey',
+  'sourceDevice',
+  'view',
+  'location',
+  'repeat'
+]);
 dart.defineLazy(html.KeyEvent, {
   get _keyboardEventDispatchRecord() {
     return html.KeyEvent._makeRecord();
@@ -93869,12 +93905,16 @@ dart.setSignature(html._DOMWindowCrossFrame, {
 dart.defineExtensionMembers(html._DOMWindowCrossFrame, [
   'close',
   'postMessage',
+  'addEventListener',
+  'dispatchEvent',
+  'removeEventListener',
   'history',
   'location',
   'closed',
   'opener',
   'parent',
-  'top'
+  'top',
+  'on'
 ]);
 html._LocationCrossFrame = class _LocationCrossFrame extends core.Object {
   set href(val) {
@@ -94391,12 +94431,33 @@ html_common.convertNativeToDart_ContextAttributes = function(nativeContextAttrib
 };
 dart.fn(html_common.convertNativeToDart_ContextAttributes, dynamicTodynamic());
 html_common._TypedImageData = class _TypedImageData extends core.Object {
+  get data() {
+    return this[data];
+  }
+  set data(value) {
+    super.data = value;
+  }
+  get height() {
+    return this[height];
+  }
+  set height(value) {
+    super.height = value;
+  }
+  get width() {
+    return this[width];
+  }
+  set width(value) {
+    super.width = value;
+  }
   new(data, height, width) {
-    this.data = data;
-    this.height = height;
-    this.width = width;
+    this[data] = data;
+    this[height] = height;
+    this[width] = width;
   }
 };
+const data = Symbol("_TypedImageData.data");
+const height = Symbol("_TypedImageData.height");
+const width = Symbol("_TypedImageData.width");
 html_common._TypedImageData[dart.implements] = () => [html.ImageData];
 dart.setSignature(html_common._TypedImageData, {
   fields: () => ({
@@ -94405,6 +94466,7 @@ dart.setSignature(html_common._TypedImageData, {
     width: core.int
   })
 });
+dart.defineExtensionMembers(html_common._TypedImageData, ['data', 'height', 'width']);
 html_common.convertNativeToDart_ImageData = function(nativeImageData) {
   0;
   if (html.ImageData.is(nativeImageData)) {
