@@ -35,8 +35,6 @@
 [error] Couldn't infer type parameter 'S'; 'dynamic' must be of type 'WebSocket'. (dart:io/websocket_impl.dart, line 469, col 10)
 [error] The argument type '(String) → Future<dynamic>' can't be assigned to the parameter type '(dynamic) → FutureOr<WebSocket>'. (dart:io/websocket_impl.dart, line 469, col 15)
 [error] Invalid override. The type of 'JsArray.[]=' ('(Object, E) → void') isn't a subtype of 'JsObject.[]=' ('(Object, dynamic) → dynamic'). (dart:js, line 363, col 3)
-[warning] Unsafe implicit cast from 'List<dynamic>' to 'List<String>'. This usually indicates that type information was lost and resulted in 'dynamic' and/or a place that will have a failure at runtime. (dart:_js_helper/regexp_helper.dart, line 140, col 43)
-[warning] Unsafe implicit cast from 'List<dynamic>' to 'List<String>'. This usually indicates that type information was lost and resulted in 'dynamic' and/or a place that will have a failure at runtime. (dart:_js_helper/regexp_helper.dart, line 152, col 43)
 [warning] Unsafe implicit cast from 'Object' to 'K'. This usually indicates that type information was lost and resulted in 'dynamic' and/or a place that will have a failure at runtime. (dart:collection, line 411, col 49)
 [warning] Unsafe implicit cast from 'Object' to 'E'. This usually indicates that type information was lost and resulted in 'dynamic' and/or a place that will have a failure at runtime. (dart:collection, line 758, col 14)
 [warning] Unsafe implicit cast from 'Object' to 'E'. This usually indicates that type information was lost and resulted in 'dynamic' and/or a place that will have a failure at runtime. (dart:collection, line 1135, col 14)
