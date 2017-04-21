@@ -422,9 +422,7 @@ class CodeGenerator extends GeneralizingAstVisitor
       return _jsInteropStaticMemberName(e.getter, name: e.name) ??
           _jsInteropStaticMemberName(e.setter, name: e.name);
     }
-    if (e is ExecutableElement &&
-        e.isExternal &&
-        findAnnotation(e, isPublicJSAnnotation) != null) {
+    if (e is ExecutableElement && e.isExternal) {
       return getAnnotationName(e, isPublicJSAnnotation) ?? name ?? e.name;
     }
     return null;
